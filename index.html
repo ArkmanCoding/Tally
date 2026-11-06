@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#2a1a10" />
+<meta name="color-scheme" content="light" />
+<meta name="description" content="تالی، یک ماشین شمارشِ مکانیکیِ کوچک. سه دکمه، یک نمایشگر کهربایی، و یک آیینِ قدیمیِ شمارش." />
+<meta name="author" content="محمد ادیب محمدی — Arkman" />
+<meta name="robots" content="index, follow" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Tally — آیینِ شمارش | Arkman" />
+<meta property="og:description" content="یک ماشین شمارشِ مکانیکیِ کوچک. سه دکمه. یک عدد. ساخته‌شده با دقت." />
+<meta property="og:locale" content="fa_IR" />
+<meta property="og:site_name" content="Tally" />
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Tally — آیینِ شمارش" />
+<meta name="twitter:description" content="یک ماشین شمارشِ مکانیکیِ کوچک. ساخته‌ی محمد ادیب محمدی — Arkman." />
+
+<title>Tally — آیینِ شمارش | Arkman</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" />
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23C9A24A'/%3E%3Ccircle cx='16' cy='16' r='11' fill='%23E8C97E'/%3E%3Ccircle cx='11.5' cy='11.5' r='3.6' fill='%23F8F0DC' opacity='0.75'/%3E%3C/svg%3E" />
+
+<link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+<a href="#machine" class="skip-link">رفتن به ماشین شمارش</a>
+
+<main class="scene">
+  <article class="machine" id="machine" aria-labelledby="machine-title" aria-describedby="machine-desc">
+
+    <h1 id="machine-title" class="visually-hidden">ماشین شمارش تالی</h1>
+
+    <header class="machine__crest" aria-hidden="true">
+      <svg class="machine__crest-ornament" viewBox="0 0 120 20" role="presentation" focusable="false">
+        <path d="M4 10 H 46" fill="none" stroke="currentColor" stroke-width="0.9" stroke-linecap="round" opacity="0.55"/>
+        <path d="M4 11.4 H 46" fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" opacity="0.3"/>
+        <circle cx="6" cy="10.7" r="1.5" fill="currentColor" opacity="0.45"/>
+        <circle cx="14" cy="10.7" r="1.9" fill="currentColor" opacity="0.6"/>
+        <path d="M24 10.7 L28.5 6.8 L33 10.7 L28.5 14.6 Z" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" opacity="0.75"/>
+        <circle cx="28.5" cy="10.7" r="1.2" fill="currentColor" opacity="0.8"/>
+        <circle cx="38" cy="10.7" r="1.9" fill="currentColor" opacity="0.6"/>
+        <circle cx="44" cy="10.7" r="1.5" fill="currentColor" opacity="0.45"/>
+      </svg>
+
+      <span class="machine__crest-label">TALLY</span>
+
+      <svg class="machine__crest-ornament" viewBox="0 0 120 20" role="presentation" focusable="false">
+        <g transform="translate(120 0) scale(-1 1)">
+          <path d="M4 10 H 46" fill="none" stroke="currentColor" stroke-width="0.9" stroke-linecap="round" opacity="0.55"/>
+          <path d="M4 11.4 H 46" fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" opacity="0.3"/>
+          <circle cx="6" cy="10.7" r="1.5" fill="currentColor" opacity="0.45"/>
+          <circle cx="14" cy="10.7" r="1.9" fill="currentColor" opacity="0.6"/>
+          <path d="M24 10.7 L28.5 6.8 L33 10.7 L28.5 14.6 Z" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" opacity="0.75"/>
+          <circle cx="28.5" cy="10.7" r="1.2" fill="currentColor" opacity="0.8"/>
+          <circle cx="38" cy="10.7" r="1.9" fill="currentColor" opacity="0.6"/>
+          <circle cx="44" cy="10.7" r="1.5" fill="currentColor" opacity="0.45"/>
+        </g>
+      </svg>
+    </header>
+
+    <!-- data-state="positive" برای هماهنگی بدون JS؛ JS بلافاصله آن را بازنویسی می‌کند -->
+    <section class="display" data-state="positive" aria-labelledby="display-label">
+      <h2 id="display-label" class="visually-hidden">شمارنده</h2>
+
+      <div class="display__frame">
+        <div class="display__inner">
+          <span class="display__led" aria-hidden="true"></span>
+          <span class="display__ghost" aria-hidden="true">۸۸</span>
+          <output id="counter-display" class="display__number" aria-live="polite" aria-atomic="true" data-value="42">۴۲</output>
+          <span class="display__label" aria-hidden="true">شمارش امروز</span>
+          <div class="display__ticks" aria-hidden="true">
+            <span class="display__tick"></span>
+            <span class="display__tick"></span>
+            <span class="display__tick"></span>
+            <span class="display__tick"></span>
+            <span class="display__tick"></span>
+            <span class="display__tick"></span>
+            <span class="display__tick"></span>
+            <span class="display__tick display__tick--center"></span>
+            <span class="display__tick"></span>
+            <span class="display__tick"></span>
+            <span class="display__tick"></span>
+            <span class="display__tick"></span>
+            <span class="display__tick"></span>
+            <span class="display__tick"></span>
+            <span class="display__tick"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="keypad" aria-labelledby="keypad-label">
+      <h2 id="keypad-label" class="visually-hidden">دکمه‌های کنترل شمارنده</h2>
+
+      <div class="keypad__primary">
+        <div class="control">
+          <button id="btn-decrement" data-action="decrement" type="button" class="key key--decrement" aria-label="کاهش شمارنده">
+            <span class="key__body" aria-hidden="true"></span>
+            <span class="key__cap" aria-hidden="true">
+              <svg class="key__glyph" viewBox="0 0 24 24" role="presentation" focusable="false">
+                <path d="M5.6 12 H 18.4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+              </svg>
+            </span>
+          </button>
+          <span class="control__label" aria-hidden="true">کاهش</span>
+        </div>
+
+        <div class="control">
+          <button id="btn-increment" data-action="increment" type="button" class="key key--increment" aria-label="افزایش شمارنده">
+            <span class="key__body" aria-hidden="true"></span>
+            <span class="key__cap" aria-hidden="true">
+              <svg class="key__glyph" viewBox="0 0 24 24" role="presentation" focusable="false">
+                <path d="M12 5.6 V 18.4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+                <path d="M5.6 12 H 18.4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+              </svg>
+            </span>
+          </button>
+          <span class="control__label" aria-hidden="true">افزایش</span>
+        </div>
+      </div>
+
+      <div class="keypad__secondary">
+        <div class="control">
+          <button id="btn-reset" data-action="reset" type="button" class="key key--reset" aria-label="صفر کردن شمارنده">
+            <span class="key__body" aria-hidden="true"></span>
+            <span class="key__cap" aria-hidden="true">
+              <svg class="key__glyph" viewBox="0 0 24 24" role="presentation" focusable="false">
+                <path d="M19.7 12 A 7.7 7.7 0 1 1 17.3 6.3" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/>
+                <path d="M13.4 5.9 L 18.1 6.4 L 17.6 11.1" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </button>
+          <span class="control__label" aria-hidden="true">بازنشانی</span>
+        </div>
+      </div>
+    </section>
+
+    <footer class="machine__plaque">
+      <a href="#creator-modal" class="plaque" aria-haspopup="dialog" aria-controls="creator-modal">
+        <span class="plaque__rivet" aria-hidden="true"></span>
+        <span class="plaque__content">
+          <span class="plaque__label">ساخته‌ی</span>
+          <span class="plaque__name">محمد ادیب محمدی</span>
+          <span class="plaque__dash" aria-hidden="true">·</span>
+          <span class="plaque__handle">Arkman</span>
+        </span>
+        <span class="plaque__rivet" aria-hidden="true"></span>
+      </a>
+    </footer>
+
+    <p id="machine-desc" class="visually-hidden">
+      یک شمارندهٔ ساده با سه دکمه: افزایش، کاهش، و بازنشانی.
+      مقدار می‌تواند مثبت یا منفی باشد و محدودیتی ندارد.
+      برای اطلاع از سازنده، روی پلاکِ برنجیِ پایینِ ماشین کلیک کنید.
+    </p>
+  </article>
+</main>
+
+<div id="creator-modal" class="creator" role="dialog" aria-modal="true" aria-labelledby="creator-title" aria-describedby="creator-bio">
+
+  <a href="#" class="creator__backdrop" aria-label="بستن پنجرهٔ سازنده" tabindex="-1" data-close-modal></a>
+
+  <div class="creator__panel">
+    <a href="#" class="creator__close" aria-label="بستن" data-close-modal>
+      <svg viewBox="0 0 24 24" width="18" height="18" role="presentation" focusable="false">
+        <path d="M6.5 6.5 L 17.5 17.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M17.5 6.5 L 6.5 17.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </a>
+
+    <header class="creator__header">
+      <div class="creator__seal" aria-hidden="true">
+        <svg viewBox="0 0 100 100" role="presentation" focusable="false">
+          <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="2" opacity="0.9"/>
+          <circle cx="50" cy="50" r="41" fill="none" stroke="currentColor" stroke-width="3.5" stroke-dasharray="1 5.4" stroke-linecap="round" opacity="0.55"/>
+          <circle cx="50" cy="50" r="34" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.7"/>
+          <circle cx="50" cy="50" r="32" fill="currentColor" opacity="0.06"/>
+          <path d="M50 6 V 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity="0.8"/>
+          <path d="M50 87 V 94" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity="0.8"/>
+          <path d="M6 50 H 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity="0.8"/>
+          <path d="M87 50 H 94" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity="0.8"/>
+          <text x="50" y="59" text-anchor="middle" font-family="Vazirmatn, sans-serif" font-size="26" font-weight="700" fill="currentColor" opacity="0.85">م ا</text>
+        </svg>
+      </div>
+
+      <h2 id="creator-title" class="creator__title">محمد ادیب محمدی</h2>
+      <p class="creator__handle">Arkman · شاه کدر</p>
+    </header>
+
+    <div class="creator__divider" aria-hidden="true"></div>
+
+    <p id="creator-bio" class="creator__bio">
+      متخصص طراحی سیستم فروش · متخصص طراحی سایت ·
+      مهندس هوش مصنوعی · بازی‌ساز و هکر قانون‌مند.
+      این ماشین شمارش، یکی از مجموعه‌ی ابزارهای کوچک
+      ساخته‌شده با دقت است.
+    </p>
+
+    <ul class="creator__links">
+      <li>
+        <a href="https://github.com/ArkmanCoding" target="_blank" rel="noopener noreferrer">
+          <svg class="creator__link-icon" viewBox="0 0 24 24" width="18" height="18" role="presentation" focusable="false">
+            <path d="M12 1.8 a 10.2 10.2 0 0 0 -3.23 19.88 c 0.51 0.09 0.7 -0.22 0.7 -0.49 v -1.9 c -2.84 0.62 -3.44 -1.2 -3.44 -1.2 a 2.7 2.7 0 0 0 -1.13 -1.49 c -0.93 -0.63 0.07 -0.62 0.07 -0.62 a 2.13 2.13 0 0 1 1.56 1.05 a 2.16 2.16 0 0 0 2.95 0.84 a 2.16 2.16 0 0 1 0.63 -1.35 c -2.27 -0.26 -4.65 -1.13 -4.65 -5.04 a 3.94 3.94 0 0 1 1.05 -2.74 a 3.67 3.67 0 0 1 0.1 -2.7 s 0.86 -0.28 2.82 1.05 a 9.72 9.72 0 0 1 5.14 0 c 1.96 -1.33 2.82 -1.05 2.82 -1.05 a 3.67 3.67 0 0 1 0.1 2.7 a 3.94 3.94 0 0 1 1.05 2.74 c 0 3.92 -2.39 4.78 -4.67 5.03 a 2.42 2.42 0 0 1 0.69 1.88 v 2.79 c 0 0.27 0.19 0.59 0.71 0.49 A 10.2 10.2 0 0 0 12 1.8 Z" fill="currentColor"/>
+          </svg>
+          <span dir="ltr">github.com/ArkmanCoding</span>
+        </a>
+      </li>
+    </ul>
+
+    <a href="#" class="creator__cta" data-close-modal>بستن</a>
+  </div>
+</div>
+
+<noscript>
+  <div class="noscript-notice" role="status">
+    برای استفاده‌ی کامل از شمارنده، جاوااسکریپت را فعال کنید.
+    طراحی بدون JavaScript هم زیباست — اما شمارش نیازمند فعال بودن آن است.
+  </div>
+</noscript>
+
+<script src="./js/script.js"></script>
+
+</body>
+</html>
